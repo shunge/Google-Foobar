@@ -74,7 +74,7 @@ def answer(digest):
         result.append(a)
     return  result
 	
-# optional hashing function uses to text
+# optional hashing function uses to test
 def hash(digest):
     result = []
     for i, item in enumerate(digest):
