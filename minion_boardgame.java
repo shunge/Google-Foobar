@@ -77,7 +77,7 @@ public class Answer {
         }
 
         // let L = -1, S = 0, R = 1
-        int left = 0, mi d= 0, right = 0;
+        int left = 0, mid= 0, right = 0;
 		
 	// stay
         if (memo[t - 1][n] == -1) {
