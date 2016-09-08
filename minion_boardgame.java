@@ -54,7 +54,7 @@ public class Answer {
     
     // use memoization
     public static int answer(int t, int n){
-        memo = new int[t+1][n+1];
+        memo = new int[t + 1][n + 1];
         // initialize matrix
         for(int[] temp:memo){
             for(int i = 0;i<temp.length;i++){
@@ -72,35 +72,35 @@ public class Answer {
         }
         if(n < 2 ||t == n - 1)
             return 1;
-        if (t < n - 1 || t == 0) {
+        if (t < n-1 || t == 0) {
             return 0;
         }
 
         // let L = -1, S = 0, R = 1
-        int left=0, mid=0, right = 0;
+        int left = 0, mid= 0, right = 0;
 		
-		// stay
-        if(memo[t - 1][n] == -1) {
+	// stay
+        if (memo[t - 1][n] == -1) {
             memo[t - 1][n] = count(t - 1, n);
         }
         mid = memo[t - 1][n];
 
-		// left
-        if(n-1 >= 0) {
-            if( memo[t - 1][n - 1] == -1)
+	// left
+        if (n-1 >= 0) {
+            if (memo[t - 1][n - 1] == -1)
                 memo[t - 1][n - 1] = count(t - 1, n - 1);
             left = memo[t - 1][n - 1];
         }
 
-		// right
-        if(n+1 < memo[0].length) {
-            if(memo[t - 1][n + 1] == -1)
+	// right
+        if (n+1 < memo[0].length) {
+            if (memo[t - 1][n + 1] == -1)
                 memo[t - 1][n + 1] = count(t - 1, n + 1);
             right = memo[t - 1][n + 1];
         }
         
         // to prevent overflow
-        if(left + mid + right > 123454321)
+        if (left + mid + right > 123454321)
             memo[t][n] = (left + mid + right) % 123454321;
         else
             memo[t][n] = left + mid + right;
