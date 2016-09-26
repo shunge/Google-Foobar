@@ -19,7 +19,6 @@ public class Sieve {
 				
                 // i is a prime, add i to the list
                 result.add(i);
-                System.out.println(i);
                 for(int j = 1; i*j <= upperbound; j++) track[i*j] = 1;
             }
         }
