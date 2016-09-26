@@ -9,10 +9,10 @@ public class Sieve {
         int[] track = new int[upperbound+1];
         ArrayList<Integer> result = new ArrayList<>();
 
-        if(upperbound <= 0) return result;
+        if(upperbound <= 1) return result;
         // initialize
         track[1] = 1;
-
+	result.add(2);
         // use 2 to skip plural
         for(int i = 1; i <= upperbound; i = i + 2){
             if(track[i] == 0){
